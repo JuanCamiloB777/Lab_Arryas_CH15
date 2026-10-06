@@ -19,10 +19,22 @@
 // Pista: primero guarda menu[posicion] en una variable y
 // pregunta si es undefined, como en describirCurso de la clase.
 // ============================================================
-
+const menu = [
+  { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+  { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+  { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+  { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+  { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+];
 function describirPlato(menu, posicion) {
-  // Tu código aquí
+  for (let i = 0; i < menu.length; i++) {
+    if (i === posicion){
+      return `${menu[posicion].nombre} · $${menu[posicion].precio}`
+    }else if(posicion>menu.length){
+      return `Ese plato no existe`
+    }
 }
-
+}
+console.log(describirPlato(menu,5))
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { describirPlato };
